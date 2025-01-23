@@ -15,20 +15,11 @@ vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 vim.keymap.set('n', '<A-LEFT>', ':bprevious<CR>', opts)
 vim.keymap.set('n', '<A-RIGHT>', ':bnext<CR>', opts)
 
--- Navigate split screens
-function toggleScreen()
-  -- Check if the screen is open
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    local buff = vim.api.nvim_win_get_buf(win)
-    local buffname = vim.api.nvim_buf_get_name(buff)
+-- Split screen settings
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', opts)
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 
-    if buffname:match("neo%-tree") then
-      vim.cmd("wincmd l") 
-      return
-    end
-  end
+-- Keep last copied (yanked) when pasting
+vim.keymap.set('v', 'p', '"_dP', opts)
 
-  vim.cmd("wincmd h")
-  return
-end
-vim.keymap.set('n', '<C-w>', toggleScreen, opts)
+
