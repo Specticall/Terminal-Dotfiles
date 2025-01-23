@@ -22,4 +22,4 @@ vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 -- Keep last copied (yanked) when pasting
 vim.keymap.set('v', 'p', '"_dP', opts)
 
-
+vim.keymap.set('n', '<C-w>', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true})
