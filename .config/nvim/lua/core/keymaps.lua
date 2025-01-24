@@ -23,3 +23,6 @@ vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 vim.keymap.set('v', 'p', '"_dP', opts)
 
 vim.keymap.set('n', '<C-w>', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true})
+
+-- Change to fuzzy finder (telescope) default toggle key
+vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>', opts)

@@ -16,15 +16,33 @@
 --     end
 --   }
 
-return { 
-  "JoosepAlviste/palenightfall.nvim",
+-- return { 
+--   "JoosepAlviste/palenightfall.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--         require('palenightfall').configure_colors({
+--           green = '#b0e69a',
+--         })	
+-- 	require('palenightfall').setup({
+-- 	  transparent = true,
+-- 	})
+--   end
+-- }
+
+ return { 
+  "catppuccin/nvim", 
+  name = "catppuccin", 
+  priority = 1000,
   config = function()
-        require('palenightfall').configure_colors({
-          green = '#b0e69a',
-        })	
-	require('palenightfall').setup({
-	  transparent = true,
-	})
+   require("catppuccin").setup({
+    transparent_background = true, 
+   })
+
+    vim.cmd.colorscheme "catppuccin"
+
   end
 }
+
+-- return { 'wilmanbarrios/palenight.nvim', name = 'palenight', priority = 1000 }
 
